@@ -37,4 +37,4 @@ body:
     id: jira
     attributes:
       label: Mã Jira liên quan (nếu có)
-      placeholder: FG-12
+      placeholder: KAN-12
