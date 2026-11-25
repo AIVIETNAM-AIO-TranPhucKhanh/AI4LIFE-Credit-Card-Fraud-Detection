@@ -1,7 +1,7 @@
 ## Mô tả
 <!-- PR này làm gì? Giữ PR nhỏ, 1 task. -->
 
-**Jira:** FG-<!-- số -->  <!-- ghi mã Jira cả ở tên branch để Jira tự liên kết -->
+**Jira:** KAN-<!-- số -->  <!-- ghi mã Jira cả ở tên branch để Jira tự liên kết -->
 
 **Module:** Data / Model / Pipeline / API / App / QA / Report
 **Reviewer chuyên môn:** @
