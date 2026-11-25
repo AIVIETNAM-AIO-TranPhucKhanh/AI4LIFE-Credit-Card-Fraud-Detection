@@ -3,7 +3,7 @@
 
 **Jira:** KAN-<!-- số -->  <!-- ghi mã Jira cả ở tên branch để Jira tự liên kết -->
 
-**Module:** Data / Model / Pipeline / API / App / QA / Report
+**Module:** Data / Model / Pipeline / API / Dashboard / QA / Report
 **Reviewer chuyên môn:** @
 
 ## Thay đổi contract? (schema, API, model bundle, feature)

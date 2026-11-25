@@ -29,7 +29,8 @@ Jira: https://ai4life-team.atlassian.net/jira/software/projects/KAN (key `KAN`)
 - **CI**: lint + pytest mỗi PR. Không dùng Dependabot (không tự cập nhật thư viện).
 
 ## Quy ước
-- Branch: `KAN-12-mo-ta` (vd `KAN-12-time-split`) - có mã Jira để Jira tự hiện branch/commit/PR khi cài app GitHub for Jira.
-- Commit/PR title bắt đầu bằng mã Jira: `KAN-12 feat: chia tập theo thời gian`.
-- Commit: `feat:`, `fix:`, `exp:`, `docs:`, `test:`.
+- Chỉ có 1 nhánh lâu dài là `main` (không dùng `dev`). Tạo branch từ `main`, mở PR vào `main`.
+- Branch: `<loại>/KAN-<số>-mo-ta`, loại là `feat`, `fix`, `research`, `docs`, `test` (vd `feat/KAN-12-time-split`). Có mã Jira để Jira tự hiện branch/commit/PR khi cài app GitHub for Jira.
+- Commit/PR title: mã Jira + Conventional Commits, vd `KAN-12 feat(data): chia tập theo thời gian`.
+- Cấu trúc thư mục: theo mục **Repository Structure** trong `README.md` (`src/preprocessing`, `src/features`, `src/models`, `src/training`, `src/evaluation`, `src/pipeline`, `src/api`, `dashboard/` dùng Gradio).
 - Không commit dữ liệu thô, model weights, `.env`.

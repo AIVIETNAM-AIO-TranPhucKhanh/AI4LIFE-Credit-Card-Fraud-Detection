@@ -255,7 +255,7 @@ The following stack is proposed and may evolve throughout development.
 | Experiment Tracking | MLflow |
 | API | FastAPI |
 | Visualization | Matplotlib, Plotly |
-| Dashboard | Streamlit |
+| Dashboard | Gradio |
 | Testing | Pytest |
 | Version Control | Git, GitHub |
 | CI/CD | GitHub Actions |
@@ -284,7 +284,7 @@ AI4LIFE-Credit-Card-Fraud-Detection/
 │   ├── pipeline/           # End-to-end ML pipeline
 │   └── api/                # Inference services
 │
-├── dashboard/              # Monitoring and visualization
+├── dashboard/              # Monitoring UI (Gradio)
 ├── tests/                  # Unit and integration tests
 ├── docs/                   # Research and technical documentation
 ├── scripts/                # Utility and execution scripts
@@ -384,33 +384,35 @@ Installation instructions, dataset preparation, training commands, API documenta
 
 The project follows a collaborative Git development workflow.
 
+Tasks are tracked in Jira (project key `KAN`). `main` is the only long-lived branch and is protected: every change goes through a Pull Request.
+
 | Branch | Purpose |
 |---|---|
-| `main` | Stable project version |
-| `dev` | Development and integration |
-| `feat/*` | Feature development |
-| `fix/*` | Bug fixes |
-| `research/*` | Research and experiments |
-| `docs/*` | Documentation |
-| `test/*` | Testing and validation |
+| `main` | Stable, protected project version |
+| `feat/KAN-<n>-*` | Feature development |
+| `fix/KAN-<n>-*` | Bug fixes |
+| `research/KAN-<n>-*` | Research and experiments |
+| `docs/KAN-<n>-*` | Documentation |
+| `test/KAN-<n>-*` | Testing and validation |
 
-All contributors are encouraged to:
+Workflow:
 
-1. Create or select an assigned GitHub Issue.
-2. Create a dedicated branch from `dev`.
-3. Implement and test the assigned task.
-4. Follow Conventional Commits.
-5. Submit a Pull Request.
-6. Request peer review before merging.
+1. Pick your assigned Jira task (`KAN-<n>`).
+2. Create a branch from `main` named `<type>/KAN-<n>-short-description`.
+3. Implement and test the task (`pytest` must pass locally).
+4. Follow Conventional Commits and put the Jira key at the start of the message.
+5. Open a Pull Request into `main` and fill in the template.
+6. Merge after CI passes and **Trần Phúc Khánh or Trịnh Gia Huy** approves.
 
 Examples:
 
 ```text
-feat(model): implement logistic regression baseline
-feat(data): add transaction preprocessing pipeline
-fix(pipeline): resolve feature schema mismatch
-test(model): validate evaluation metrics
-docs: update system architecture
+Branch:  feat/KAN-12-time-split
+Commits: KAN-12 feat(data): add chronological train/val/test split
+         KAN-15 feat(model): implement logistic regression baseline
+         KAN-18 fix(pipeline): resolve feature schema mismatch
+         KAN-20 test(model): validate evaluation metrics
+         KAN-21 docs: update system architecture
 ```
 
 ---

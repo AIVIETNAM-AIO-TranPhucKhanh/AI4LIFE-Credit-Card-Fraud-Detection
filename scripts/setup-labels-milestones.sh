@@ -23,12 +23,12 @@ label "P0: core"         "B60205" "Bắt buộc để nộp 12/12"
 label "P1: extension"    "FBCA04" "Mở rộng - chỉ làm khi P0 ổn định"
 
 # Module (khớp cấu trúc repo đề xuất)
-label "area: data"       "C2E0C6" "src/fraud_detection/data, features"
-label "area: model"      "D4C5F9" "models, training, evaluation, risk_engine"
-label "area: pipeline"   "BFD4F2" "pipelines, serving, artifact_store, replay"
-label "area: api"        "BFD4F2" "api/ (FastAPI)"
-label "area: app"        "FEF2C0" "app/, database/ (dashboard Streamlit)"
-label "area: qa"         "F9D0C4" "tests/integration, tests/validation, reports/qa"
+label "area: data"       "C2E0C6" "data/, src/preprocessing, src/features, notebooks/"
+label "area: model"      "D4C5F9" "src/models, src/training, src/evaluation, experiments/"
+label "area: pipeline"   "BFD4F2" "src/pipeline (luồng end-to-end)"
+label "area: api"        "BFD4F2" "src/api (FastAPI)"
+label "area: dashboard"  "FEF2C0" "dashboard/ (Gradio)"
+label "area: qa"         "F9D0C4" "tests/, báo cáo QA"
 label "area: infra"      "EDEDED" "CI, Docker, môi trường"
 
 
