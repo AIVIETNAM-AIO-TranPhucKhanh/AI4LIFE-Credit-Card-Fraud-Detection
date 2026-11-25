@@ -1,0 +1,40 @@
+name: 🐞 Báo lỗi
+description: Lỗi code, sai số liệu, API/UI không chạy đúng
+title: "[Bug] "
+labels: ["type: bug"]
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Mức độ
+      options: ["Nghiêm trọng - sai số liệu/quyết định cảnh báo", "Cao - chặn luồng demo", "Trung bình", "Thấp"]
+    validations: {required: true}
+  - type: dropdown
+    id: area
+    attributes:
+      label: Module
+      options: [Data, Model, Pipeline, API, App, QA, Infra]
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước tái hiện
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi vs thực tế
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes:
+      label: Commit / model_version / run ID
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      render: shell
+  - type: input
+    id: jira
+    attributes:
+      label: Mã Jira liên quan (nếu có)
+      placeholder: FG-12

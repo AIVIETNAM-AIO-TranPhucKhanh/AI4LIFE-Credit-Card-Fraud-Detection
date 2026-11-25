@@ -1,0 +1,4 @@
+# Mọi thay đổi vào main cần 1 trong 2 người dưới đây approve (Tech Lead / Model Lead).
+# Ruleset của main bật "Require review from Code Owners", nên chỉ approve của 2 người này mới được tính.
+# Reviewer chuyên môn theo module được tag thủ công trong PR template.
+*    @AIVIETNAM-AIO-TranPhucKhanh @AIVIETNAM-AIO-TrinhGiaHuy
