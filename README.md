@@ -1,284 +1,455 @@
 
-# AI4LIFE — Credit Card Fraud Detection
+<div align="center">
 
-![Status](https://img.shields.io/badge/Status-In%20Development-blue)
-![Python](https://img.shields.io/badge/Language-Python-3776AB)
-![Domain](https://img.shields.io/badge/Domain-Financial%20AI-green)
-![Team](https://img.shields.io/badge/Team-AI4LIFE-orange)
+# AI4LIFE
+### Credit Card Fraud Detection & Early Warning System
 
-> AI-powered Fraud Detection and Early Warning System for Financial Transactions.
+**Leveraging Machine Learning to Detect Financial Fraud, Assess Transaction Risk, and Enable Early Intervention.**
 
-## 1. Project Overview — Giới thiệu dự án
+![Status](https://img.shields.io/badge/Status-In%20Development-blue?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F97316?style=flat-square)
+![Domain](https://img.shields.io/badge/Domain-FinTech-059669?style=flat-square)
+![Release](https://img.shields.io/badge/MVP-Planned-purple?style=flat-square)
 
-AI4LIFE — Credit Card Fraud Detection là dự án nghiên cứu và phát triển hệ thống ứng dụng Machine Learning nhằm phát hiện các giao dịch tài chính bất thường, nhận diện nguy cơ gian lận và hỗ trợ cảnh báo sớm.
+[Overview](#overview) ·
+[Research](#research-focus) ·
+[Architecture](#system-architecture) ·
+[Evaluation](#evaluation-framework) ·
+[Roadmap](#development-roadmap) ·
+[Team](#team)
 
-Dự án hướng đến việc xây dựng một giải pháp hỗ trợ các ngân hàng, tổ chức tài chính, doanh nghiệp FinTech và hệ thống thanh toán điện tử trong việc quản lý rủi ro giao dịch, giảm thiểu tổn thất tài chính và nâng cao khả năng bảo vệ khách hàng.
+</div>
 
-Không chỉ tập trung vào bài toán phân loại giao dịch, dự án còn hướng đến việc nghiên cứu những hạn chế của các hệ thống phát hiện gian lận hiện tại và khả năng ứng dụng AI vào môi trường tài chính thực tế.
+---
 
-## 2. Problem Statement — Bài toán cần giải quyết
+## Overview
 
-Mặc dù các hệ thống bảo mật tài chính ngày càng phát triển, gian lận giao dịch vẫn là một thách thức lớn đối với ngân hàng, doanh nghiệp và người dùng.
+Financial fraud remains a critical challenge for banks, financial institutions, payment platforms, and their customers.
 
-Các vấn đề chính bao gồm:
+Despite advances in cybersecurity and financial technology, fraudulent transactions continue to evolve, exposing limitations in conventional rule-based fraud detection systems.
 
-- Gian lận thẻ tín dụng và giao dịch trái phép.
-- Đánh cắp thông tin thẻ và giả mạo thẻ.
-- Các phương thức gian lận liên tục thay đổi.
-- Dữ liệu mất cân bằng nghiêm trọng (Imbalanced Data).
-- Khó phát hiện các hình thức gian lận chưa từng xuất hiện.
-- Cảnh báo nhầm đối với các giao dịch hợp lệ.
-- Sự đánh đổi giữa khả năng phát hiện gian lận và trải nghiệm khách hàng.
-- Yêu cầu xử lý giao dịch và cảnh báo với độ trễ thấp.
+**AI4LIFE** is a research-oriented AI engineering project focused on developing an intelligent fraud detection and early warning system capable of identifying suspicious credit card transactions, assessing transaction-level risk, and supporting timely decision-making.
 
-Câu hỏi nghiên cứu trọng tâm:
+The project bridges Machine Learning research and practical financial risk management, with an emphasis on detection effectiveness, reliability, and real-world applicability.
 
-**How can we improve fraud detection capabilities while minimizing false alarms and operational costs?**
+### Mission
 
-## 3. Project Objectives — Mục tiêu dự án
+> Make financial transactions safer through intelligent, reliable, and practical AI solutions.
+
+### Vision
+
+Develop a scalable fraud risk assessment framework that could serve as a foundation for future integration into banking, FinTech, and digital payment ecosystems.
+
+---
+
+## Problem Statement
+
+Fraud detection is not simply a binary classification problem. It is a complex financial risk management challenge characterized by:
+
+| Challenge | Description |
+|---|---|
+| Class Imbalance | Fraudulent transactions represent a small fraction of total transactions. |
+| Evolving Fraud Patterns | Fraud strategies continuously adapt to existing security mechanisms. |
+| False Positives | Incorrect alerts create operational costs and disrupt legitimate customers. |
+| Emerging Threats | Previously unseen fraud patterns may not be recognized by existing models. |
+| Detection Latency | Delayed detection may reduce opportunities for intervention. |
+| Financial Impact | Different fraudulent transactions may result in different levels of financial loss. |
+| Explainability | Financial institutions need understandable and actionable risk assessments. |
+
+The central challenge is to improve fraud detection without introducing excessive false alarms or unnecessary friction into legitimate transactions.
+
+---
+
+## Research Focus
+
+The project investigates the following research questions:
+
+- **RQ1:** What limitations allow fraudulent transactions to remain undetected despite existing security and fraud detection mechanisms?
+
+- **RQ2:** How can Machine Learning improve fraud detection under highly imbalanced data distributions?
+
+- **RQ3:** How can supervised and unsupervised learning methods complement each other in identifying suspicious transactions?
+
+- **RQ4:** How can detection thresholds be optimized to balance fraud coverage, false alarms, and operational costs?
+
+- **RQ5:** How can fraud detection models remain effective when transaction patterns and fraud strategies evolve over time?
+
+- **RQ6:** How can a fraud detection model be transformed into a practical early warning and risk assessment system?
+
+### Research Hypothesis
+
+Combining effective transaction representation, appropriate learning methods, and risk-aware decision thresholds may improve fraud detection performance compared with conventional baseline approaches.
+
+This hypothesis will be evaluated through controlled experiments.
+
+---
+
+## Project Objectives
 
 ### Research Objectives
 
-- Nghiên cứu nguyên nhân và những thách thức trong việc phát hiện gian lận tài chính.
-- Phân tích đặc điểm và hành vi của các giao dịch bất thường.
-- Nghiên cứu, so sánh các phương pháp Machine Learning trong Fraud Detection.
-- Đánh giá khả năng phát hiện gian lận trên dữ liệu mất cân bằng.
-- Nghiên cứu khả năng thích ứng với các hình thức gian lận mới.
-- Tối ưu sự cân bằng giữa Fraud Detection và False Positive Rate.
+- Investigate financial fraud patterns and detection challenges.
+- Analyze transaction behavior and informative risk indicators.
+- Benchmark multiple Machine Learning approaches.
+- Evaluate performance under class imbalance.
+- Investigate anomaly detection and emerging fraud patterns.
+- Conduct reproducible experiments and systematic error analysis.
 
-### Product Objectives
+### Engineering Objectives
 
-- Xây dựng hệ thống tự động đánh giá mức độ rủi ro của giao dịch.
-- Phát hiện và cảnh báo các giao dịch có dấu hiệu gian lận.
-- Cung cấp Fraud Risk Score cho từng giao dịch.
-- Hỗ trợ ưu tiên các giao dịch cần được xác minh.
-- Xây dựng hệ thống có khả năng tích hợp với các ứng dụng tài chính.
-- Phát triển dashboard hỗ trợ giám sát và phân tích rủi ro.
+- Develop a reproducible data processing pipeline.
+- Build transaction-level fraud risk scoring models.
+- Implement configurable risk-based decision mechanisms.
+- Develop an inference API for transaction assessment.
+- Build an interactive fraud monitoring dashboard.
+- Establish automated testing and validation workflows.
 
-## 4. Proposed Approach — Phương pháp tiếp cận
+### Business Objectives
 
-### Data Engineering
+- Improve fraud detection coverage.
+- Reduce unnecessary fraud alerts.
+- Prioritize high-risk transactions for investigation.
+- Support timely intervention and additional verification.
+- Provide a foundation for financial risk management applications.
 
-- Data Collection
-- Exploratory Data Analysis (EDA)
-- Data Cleaning
-- Feature Engineering
-- Imbalanced Data Handling
-- Data Leakage Prevention
-- Train / Validation / Test Split
+---
 
-### Machine Learning
+## System Architecture
 
-Các mô hình dự kiến nghiên cứu và thực nghiệm:
-
-- Rule-based Baseline
-- Logistic Regression
-- Random Forest
-- XGBoost
-- LightGBM
-- Isolation Forest
-- Hybrid Fraud Detection Models
-
-Việc lựa chọn mô hình cuối cùng sẽ dựa trên kết quả thực nghiệm, khả năng phát hiện gian lận, chi phí cảnh báo nhầm và tính khả thi khi triển khai.
-
-### System Engineering
-
-- Transaction Processing Pipeline
-- Model Training Pipeline
-- Fraud Risk Scoring
-- Decision Threshold Optimization
-- Inference API
-- Early Warning System
-- Monitoring Dashboard
-
-## 5. Proposed System Architecture
+The following diagram represents the proposed system architecture.
 
 ```mermaid
 flowchart TD
     A[Transaction Data] --> B[Data Validation]
-    B --> C[Data Preprocessing]
-    C --> D[Feature Engineering]
-    D --> E[Fraud Detection Model]
-    E --> F[Fraud Risk Score]
-    F --> G{Risk Decision}
-    G -->|Low Risk| H[Normal Transaction]
-    G -->|Medium Risk| I[Additional Verification]
-    G -->|High Risk| J[Fraud Alert]
-    H --> K[Monitoring Dashboard]
-    I --> K
-    J --> K
+    B --> C[Preprocessing and Feature Engineering]
+    C --> D[Fraud Detection Engine]
+
+    D --> E[Supervised Learning]
+    D -.-> F[Anomaly Detection - Future Research]
+
+    E --> G[Fraud Risk Score]
+    F -.-> G
+
+    G --> H[Risk Decision Engine]
+
+    H -->|Low Risk| I[Normal Processing]
+    H -->|Medium Risk| J[Additional Verification]
+    H -->|High Risk| K[Fraud Alert]
+
+    I --> L[Monitoring Dashboard]
+    J --> L
+    K --> L
+
+    L -.-> M[Investigation and Feedback]
+    M -.-> N[Model Monitoring and Improvement]
+    N -.-> D
 ```
 
-Hệ thống đóng vai trò hỗ trợ ra quyết định và quản lý rủi ro, không mặc định tự động kết luận hoặc chặn mọi giao dịch được cảnh báo.
+The system is designed to support risk-based decisions rather than automatically treating every suspicious transaction as confirmed fraud.
 
-## 6. Evaluation Metrics — Tiêu chí đánh giá
+Dashed connections represent potential future extensions.
 
-Do đặc thù mất cân bằng dữ liệu, Accuracy không được sử dụng làm tiêu chí đánh giá chính.
+---
 
-| Metric | Purpose | Priority |
-|---|---|---|
-| Average Precision (AP) | Đánh giá chất lượng mô hình trên dữ liệu mất cân bằng | Primary |
-| Recall@K | Khả năng phát hiện gian lận với ngân sách cảnh báo cố định | Primary |
-| Recall | Tỷ lệ gian lận được phát hiện | High |
-| Precision | Độ tin cậy của cảnh báo | High |
-| False Positive Rate | Tỷ lệ giao dịch hợp lệ bị cảnh báo nhầm | High |
-| Precision@K | Chất lượng các giao dịch được ưu tiên kiểm tra | High |
-| F1-score | Cân bằng Precision và Recall | Secondary |
-| ROC-AUC | Khả năng phân biệt hai lớp | Secondary |
-| Alert Rate | Tỷ lệ giao dịch bị cảnh báo | Business |
-| Fraud Amount Recall | Tỷ lệ giá trị gian lận được phát hiện | Business |
-| P95 Inference Latency | Độ trễ dự đoán của hệ thống | System |
+## Machine Learning Strategy
+
+The project adopts an experimental, baseline-driven development strategy.
+
+### Supervised Learning
+
+| Model | Purpose |
+|---|---|
+| Logistic Regression | Interpretable baseline |
+| Random Forest | Nonlinear classification benchmark |
+| XGBoost | Gradient boosting benchmark |
+| LightGBM | Additional boosting candidate |
+
+### Unsupervised Learning — Future Research
+
+| Model | Purpose |
+|---|---|
+| Isolation Forest | Anomaly detection |
+| Autoencoder | Learning normal transaction representations |
+
+### Hybrid Approaches — Future Research
+
+Potential combinations include:
+
+- Supervised classification and anomaly detection.
+- Cost-sensitive learning and threshold optimization.
+- Behavioral features and transaction risk scoring.
+- Ensemble-based fraud detection.
+
+Model selection will be driven by experimental evidence rather than model complexity alone.
+
+---
+
+## Evaluation Framework
+
+Accuracy is not considered a primary evaluation metric due to the highly imbalanced nature of fraud detection datasets.
+
+### Primary Metrics
+
+| Metric | Evaluation Objective |
+|---|---|
+| Average Precision (AP) | Measure fraud ranking quality across decision thresholds. |
+| Recall at Fixed Alert Budget | Maximize fraud coverage within investigation capacity. |
+
+### Secondary Metrics
+
+| Metric | Evaluation Objective |
+|---|---|
+| Recall | Measure detected fraudulent transactions. |
+| Precision | Measure the reliability of fraud alerts. |
+| False Positive Rate | Measure incorrect alerts on legitimate transactions. |
+| Precision@K | Measure alert quality within the top-K transactions. |
+| F1-score | Balance precision and recall. |
+| ROC-AUC | Measure overall discrimination capability. |
+
+### Business & System Metrics
+
+| Metric | Evaluation Objective |
+|---|---|
+| Alert Rate | Measure operational investigation workload. |
+| Fraud Amount Recall | Measure the proportion of fraudulent transaction value detected, when supported by the dataset. |
+| P95 Inference Latency | Measure transaction assessment latency. |
 
 ### Optimization Objective
 
-**Maximize fraud detection capability while controlling false alarms and operational costs.**
+> Maximize fraud detection capability while controlling false alarms and operational costs.
 
-Các mô hình phải được đánh giá trên cùng điều kiện dữ liệu và quy trình thực nghiệm. Ngưỡng cảnh báo được lựa chọn trên validation set, không tối ưu trực tiếp trên test set.
+### Evaluation Protocol
 
-## 7. Team Members — Thành viên
+- Use consistent datasets and evaluation conditions across models.
+- Prefer chronological data splitting when timestamps are available.
+- Prevent data leakage during preprocessing and feature engineering.
+- Fit preprocessing and resampling methods using training data only.
+- Optimize decision thresholds on validation data.
+- Reserve the test set for final evaluation.
+- Compare candidate models against established baselines.
+- Document experimental configurations and limitations.
 
-| Member | Role | Responsibilities |
-|---|---|---|
-| Trịnh Gia Huy | AI Engineer — Model | Model research, training, evaluation, optimization |
-| Nguyễn Đức Thông | AI Engineer — Data | Data collection, EDA, preprocessing, feature engineering |
-| Phạm Đức Anh | AI Engineer — Pipeline | Training pipeline, inference pipeline, API integration |
-| Trần Phúc Khánh | Tech Leader | System architecture, technical management, integration, dashboard |
-| Hồ Nguyễn Thuỳ Dung | QA / Reviewer | Testing, code review, evaluation validation, quality assurance |
+### Experimental Results
 
-## 8. Proposed Repository Structure
+| Model | AP | Recall | Precision | FPR | Recall@K |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | — | — | — | — | — |
+| Random Forest | — | — | — | — | — |
+| XGBoost | — | — | — | — | — |
+| LightGBM | — | — | — | — | — |
+
+*Experimental results will be published after model training and validation.*
+
+---
+
+## Technology Stack
+
+The following stack is proposed and may evolve throughout development.
+
+| Layer | Technology |
+|---|---|
+| Programming | Python |
+| Data Engineering | Pandas, NumPy |
+| Machine Learning | Scikit-learn, XGBoost, LightGBM |
+| Experiment Tracking | MLflow |
+| API | FastAPI |
+| Visualization | Matplotlib, Plotly |
+| Dashboard | Streamlit |
+| Testing | Pytest |
+| Version Control | Git, GitHub |
+| CI/CD | GitHub Actions |
+| Containerization | Docker |
+
+---
+
+## Repository Structure
+
+The proposed repository structure follows a modular AI engineering architecture.
 
 ```text
 AI4LIFE-Credit-Card-Fraud-Detection/
 │
-├── data/
-│   └── README.md
-│
-├── notebooks/
+├── configs/                # Experiment and system configurations
+├── data/                   # Dataset documentation and local data
+├── notebooks/              # EDA and exploratory experiments
+├── experiments/            # Experiment configurations and results
 │
 ├── src/
-│   ├── preprocessing/
-│   ├── features/
-│   ├── models/
-│   ├── evaluation/
-│   ├── pipeline/
-│   └── api/
+│   ├── preprocessing/      # Data validation and preprocessing
+│   ├── features/           # Feature engineering
+│   ├── models/             # Model implementations
+│   ├── training/           # Model training
+│   ├── evaluation/         # Metrics and error analysis
+│   ├── pipeline/           # End-to-end ML pipeline
+│   └── api/                # Inference services
 │
-├── dashboard/
-├── configs/
-├── experiments/
-├── tests/
-├── docs/
+├── dashboard/              # Monitoring and visualization
+├── tests/                  # Unit and integration tests
+├── docs/                   # Research and technical documentation
+├── scripts/                # Utility and execution scripts
+│
 ├── .github/
-│   └── workflows/
+│   └── workflows/          # Automated CI/CD workflows
 │
 ├── .gitignore
 ├── .env.example
 ├── requirements.txt
+├── CONTRIBUTING.md
 └── README.md
 ```
 
-## 9. Project Roadmap
+---
 
-### Phase 1 — Minimum Viable Product (2 Weeks)
+## Development Roadmap
 
-- [ ] Research related papers and existing solutions
-- [ ] Select and analyze datasets
-- [ ] Establish data preprocessing pipeline
-- [ ] Define evaluation protocol and metrics
-- [ ] Implement baseline models
-- [ ] Train and compare candidate models
-- [ ] Optimize decision threshold
-- [ ] Build inference API
-- [ ] Develop basic monitoring dashboard
-- [ ] Integrate end-to-end fraud detection pipeline
-- [ ] Conduct testing and error analysis
-- [ ] Deliver MVP demonstration
+### Phase 01 — MVP
 
-### Phase 2 — Research & Optimization
+**Duration: 2 weeks**
 
-- [ ] Advanced feature engineering
-- [ ] Anomaly detection
-- [ ] Hybrid fraud detection models
-- [ ] Unseen fraud pattern detection
-- [ ] Explainable AI (XAI)
-- [ ] Cost-sensitive learning
-- [ ] Model robustness evaluation
+The objective is to deliver a functional and reproducible end-to-end fraud detection prototype.
 
-### Phase 3 — Real-world Deployment Research
+- [ ] Review existing research and fraud detection approaches.
+- [ ] Select and analyze an appropriate dataset.
+- [ ] Establish preprocessing and feature engineering pipelines.
+- [ ] Define evaluation metrics and experimental protocols.
+- [ ] Implement Logistic Regression as the baseline.
+- [ ] Train and evaluate candidate classification models.
+- [ ] Optimize risk decision thresholds.
+- [ ] Implement transaction inference API.
+- [ ] Develop a basic fraud monitoring dashboard.
+- [ ] Integrate and validate the end-to-end system.
+- [ ] Deliver MVP demonstration and experimental report.
 
-- [ ] Real-time transaction processing
-- [ ] Model monitoring
-- [ ] Data drift and concept drift detection
-- [ ] Scalable system architecture
-- [ ] Human-in-the-loop fraud investigation
-- [ ] Financial system integration
+**Definition of Done**
 
-## 10. Proposed Technology Stack
+A working prototype capable of receiving transaction features, generating a fraud risk score, producing a risk-based alert, and displaying the result through a basic monitoring interface.
 
-| Category | Technologies |
-|---|---|
-| Programming Language | Python |
-| Data Processing | Pandas, NumPy |
-| Machine Learning | Scikit-learn, XGBoost, LightGBM |
-| Visualization | Matplotlib, Seaborn |
-| API Development | FastAPI |
-| Dashboard | Streamlit |
-| Testing | Pytest |
-| Version Control | Git, GitHub |
-| Experiment Tracking | MLflow |
-| Deployment | Docker |
+### Phase 02 — Advanced Research
 
-The final technology stack will be determined based on project requirements and experimental results.
+- [ ] Advanced feature engineering.
+- [ ] Unsupervised anomaly detection.
+- [ ] Hybrid fraud detection models.
+- [ ] Cost-sensitive learning.
+- [ ] Explainable AI.
+- [ ] Emerging fraud pattern evaluation.
+- [ ] Model robustness and temporal validation.
 
-## 11. Collaboration Workflow
+### Phase 03 — Production-Oriented Research
 
-The team follows a collaborative Git workflow:
-
-- `main`: Stable version.
-- `dev`: Development and integration.
-- `feat/*`: New features.
-- `fix/*`: Bug fixes.
-- `test/*`: Testing and validation.
-- `research/*`: Research and experiments.
-
-### Contribution Guidelines
-
-1. Create or select an assigned GitHub Issue.
-2. Create a new branch from `dev`.
-3. Implement and test the assigned feature.
-4. Commit changes with clear commit messages.
-5. Create a Pull Request to `dev`.
-6. Request code review.
-7. Merge after approval.
-
-Direct commits to shared branches should be avoided.
-
-## 12. Expected Outcomes — Kết quả mong đợi
-
-- A reproducible fraud detection pipeline.
-- A benchmark of multiple Machine Learning models.
-- An optimized fraud risk scoring model.
-- An early warning mechanism for suspicious transactions.
-- A functional inference API and monitoring dashboard.
-- An experimental report with evaluation results and error analysis.
-- A foundation for future research and real-world financial applications.
-
-## 13. Data Privacy & Responsible AI
-
-- Do not commit sensitive financial or personal information.
-- Do not upload confidential datasets or customer transaction records.
-- Do not expose credentials, API keys or environment variables.
-- Use authorized, anonymized or synthetic datasets.
-- Document model limitations and potential risks.
-
-This project is currently intended for research and educational purposes. Production deployment requires additional security, privacy, compliance and reliability validation.
-
-## 14. Research & References
-
-Research papers, dataset references, experimental methodologies and technical documentation will be maintained in the `docs/` directory.
+- [ ] Real-time transaction processing.
+- [ ] Model monitoring.
+- [ ] Data drift and concept drift detection.
+- [ ] Investigation feedback mechanisms.
+- [ ] Scalability and performance optimization.
+- [ ] Security and financial system integration assessment.
 
 ---
 
-**AI4LIFE Team**
+## Potential Applications
 
-Building intelligent, reliable and practical AI solutions for financial fraud detection.
+| Domain | Potential Application |
+|---|---|
+| Banking | Credit card transaction risk assessment |
+| FinTech | Suspicious transaction monitoring |
+| Digital Payments | Transaction-level fraud screening |
+| E-commerce | Payment fraud risk assessment |
+| Financial Institutions | Investigation prioritization and decision support |
+
+The project aims to explore practical applications while recognizing that real-world financial deployment requires additional validation, security controls, compliance assessment, and domain expertise.
+
+---
+
+## Getting Started
+
+The project is currently under active development.
+
+Installation instructions, dataset preparation, training commands, API documentation, and demonstration examples will be provided as the MVP components become available.
+
+---
+
+## Team
+
+| Member | Role | Area of Responsibility |
+|---|---|---|
+| Trịnh Gia Huy | AI Engineer — Model | Model research, training, evaluation and optimization |
+| Nguyễn Đức Thông | AI Engineer — Data | Data analysis, preprocessing and feature engineering |
+| Phạm Đức Anh | AI Engineer — Pipeline | ML pipeline, inference services and API integration |
+| Trần Phúc Khánh | Tech Leader | System architecture, technical direction and integration |
+| Hồ Nguyễn Thuỳ Dung | QA / Reviewer | Testing, code review and experimental validation |
+
+---
+
+## Contribution Workflow
+
+The project follows a collaborative Git development workflow.
+
+| Branch | Purpose |
+|---|---|
+| `main` | Stable project version |
+| `dev` | Development and integration |
+| `feat/*` | Feature development |
+| `fix/*` | Bug fixes |
+| `research/*` | Research and experiments |
+| `docs/*` | Documentation |
+| `test/*` | Testing and validation |
+
+All contributors are encouraged to:
+
+1. Create or select an assigned GitHub Issue.
+2. Create a dedicated branch from `dev`.
+3. Implement and test the assigned task.
+4. Follow Conventional Commits.
+5. Submit a Pull Request.
+6. Request peer review before merging.
+
+Examples:
+
+```text
+feat(model): implement logistic regression baseline
+feat(data): add transaction preprocessing pipeline
+fix(pipeline): resolve feature schema mismatch
+test(model): validate evaluation metrics
+docs: update system architecture
+```
+
+---
+
+## Research & Documentation
+
+Research papers, experiment reports, architecture decisions, dataset documentation, and technical references will be maintained in the `docs/` directory.
+
+The project emphasizes:
+
+- Scientific reasoning.
+- Reproducible experimentation.
+- Evidence-based model selection.
+- Transparent evaluation.
+- Collaborative engineering practices.
+
+---
+
+## Responsible AI & Data Privacy
+
+Financial data requires careful handling and responsible use.
+
+- Use authorized, anonymized, or synthetic datasets.
+- Never commit sensitive customer or financial information.
+- Never expose credentials, API keys, or secrets.
+- Document model limitations and potential failure modes.
+- Evaluate both missed fraud and incorrect alerts.
+- Maintain human oversight for high-impact financial decisions.
+
+This project is intended for educational and research purposes and is not currently validated for production financial decision-making.
+
+---
+
+<div align="center">
+
+### AI4LIFE
+
+**Research Driven · Engineering Focused · Impact Oriented**
+
+Building intelligent AI solutions for a safer financial ecosystem.
+
+</div>
