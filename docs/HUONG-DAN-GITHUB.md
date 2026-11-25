@@ -10,7 +10,7 @@ Jira: https://ai4life-team.atlassian.net/jira/software/projects/KAN (key `KAN`)
    ```bash
    bash scripts/setup-labels-milestones.sh   # (đã chạy) label + 4 milestone
    ```
-4. (Đã làm) Ruleset `main`: bắt buộc PR, 1 approval từ Code Owner (Phúc hoặc Huy), CI xanh, cấm force-push/xoá branch.
+4. (Đã làm) Ruleset `main`: bắt buộc PR, 1 approval từ Code Owner (Khánh hoặc Huy), CI xanh, cấm force-push/xoá branch.
 
 ## 4 giai đoạn
 | Milestone | Thời gian | Mốc bàn giao |
@@ -25,7 +25,7 @@ Jira: https://ai4life-team.atlassian.net/jira/software/projects/KAN (key `KAN`)
 - **Label** (gắn cho PR): loại việc, P0/P1, module, mã thực nghiệm E0-E5, `risk: leakage`.
 - **Issue form**: chỉ còn Báo lỗi (có mức độ, mã Jira).
 - **PR template**: reviewer chuyên môn, cảnh báo đổi contract, checklist chống leakage.
-- **CODEOWNERS**: mọi PR vào `main` cần Phúc hoặc Huy approve. Reviewer chuyên môn theo module thì tag thủ công trong PR.
+- **CODEOWNERS**: mọi PR vào `main` cần Khánh hoặc Huy approve. Reviewer chuyên môn theo module thì tag thủ công trong PR.
 - **CI**: lint + pytest mỗi PR. Không dùng Dependabot (không tự cập nhật thư viện).
 
 ## Quy ước
