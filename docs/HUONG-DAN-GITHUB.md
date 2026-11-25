@@ -25,7 +25,7 @@ Repo: `AIVIETNAM-AIO-TranPhucKhanh/AI4LIFE-Credit-Card-Fraud-Detection` · Deadl
 - **Issue form**: chỉ còn Báo lỗi (có mức độ, mã Jira).
 - **PR template**: reviewer chuyên môn, cảnh báo đổi contract, checklist chống leakage.
 - **CODEOWNERS**: mọi PR vào `main` cần Phúc hoặc Huy approve. Reviewer chuyên môn theo module thì tag thủ công trong PR.
-- **CI**: lint + pytest mỗi PR. **Dependabot**: cập nhật thư viện hằng tuần.
+- **CI**: lint + pytest mỗi PR. Không dùng Dependabot (không tự cập nhật thư viện).
 
 ## Quy ước
 - Branch: `FG-12-mo-ta` (vd `FG-12-time-split`) - có mã Jira để Jira tự hiện branch/commit/PR khi cài app GitHub for Jira. Thay `FG` bằng key space Jira thật.
