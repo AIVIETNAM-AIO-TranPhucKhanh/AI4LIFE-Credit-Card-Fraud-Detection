@@ -1,7 +1,7 @@
 # AI4LIFE - Credit Card Fraud Detection
 
 ## Thành viên
-- Trình Gia Huy - AI Engineer (Model)
+- Trịnh Gia Huy - AI Engineer (Model)
 - Nguyễn Đức Thông - AI Enginerr (Data)
 - Phạm Đức Anh - AI Engineer (Pipeline)
 - Trần Phúc Khánh - Tech Leader
