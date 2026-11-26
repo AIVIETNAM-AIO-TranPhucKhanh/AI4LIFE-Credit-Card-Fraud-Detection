@@ -1,0 +1,28 @@
+# Data
+numpy
+pandas
+
+# Machine learning
+scikit-learn
+xgboost
+lightgbm
+imbalanced-learn
+
+# Experiment tracking
+mlflow
+
+# Visualization
+matplotlib
+plotly
+
+# API
+fastapi
+uvicorn
+pydantic
+
+# Dashboard
+gradio
+
+# Testing & linting
+pytest
+ruff
