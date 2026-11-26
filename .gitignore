@@ -1,10 +1,1 @@
-# --- FraudGuard: không commit dữ liệu & model lớn ---
-data/raw/
-data/processed/
-artifacts/
-mlruns/
-*.pkl
-*.joblib
-*.pt
-*.parquet
 .env

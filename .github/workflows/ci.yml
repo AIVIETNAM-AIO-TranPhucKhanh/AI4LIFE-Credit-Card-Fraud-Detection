@@ -20,4 +20,8 @@ jobs:
         run: ruff check . --exit-zero
       - name: Test
         run: |
-          if [ -d tests ]; then pytest -q; else echo "Chưa có thư mục tests/ - bỏ qua"; fi
+          if [ -d tests ]; then
+            python -m pytest -q || [ $? -eq 5 ]   # 5 = chưa có test nào -> coi là đạt
+          else
+            echo "Chưa có thư mục tests/ - bỏ qua"
+          fi
