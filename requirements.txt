@@ -1,12 +1,18 @@
 # Data
 numpy
 pandas
+pyarrow            # read/write parquet for processed data
+kaggle             # download Sparkov / ULB / IEEE-CIS into data/raw/
 
 # Machine learning
-scikit-learn
+scikit-learn       # Logistic Regression, Random Forest, Isolation Forest, MLP autoencoder
 xgboost
 lightgbm
+catboost
 imbalanced-learn
+
+# Notebooks (EDA)
+jupyter
 
 # Experiment tracking
 mlflow
@@ -15,14 +21,10 @@ mlflow
 matplotlib
 plotly
 
-# API
-fastapi
-uvicorn
-pydantic
-
-# Dashboard
-gradio
-
 # Testing & linting
 pytest
 ruff
+
+# Data downloading
+huggingface_hub 
+datasets
